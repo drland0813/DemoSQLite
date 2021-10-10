@@ -13,6 +13,7 @@ import android.widget.Toast;
 import static com.example.demosqlite.MainActivity.*;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.demosqlite.data.DemoSqliteDAO;
 import com.example.demosqlite.model.Student;
 
 public class UpdateStudent extends AppCompatActivity {
@@ -45,6 +46,8 @@ public class UpdateStudent extends AppCompatActivity {
         student.setmID(Integer.parseInt(intent.getStringExtra("id")));
         student.setmFullName(intent.getStringExtra("name"));
         student.setmClass(intent.getStringExtra("class"));
+
+
         txtID.setText(student.getmID()+"");
         edtName.setText(student.getmFullName());
         setSelectedItems(spnClass,student.getmClass());
@@ -54,7 +57,7 @@ public class UpdateStudent extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Student tempStudent = tempData();
-                boolean result = sqliteDAO.updateStudent(UpdateStudent.this,tempStudent);
+                boolean result = DemoSqliteDAO.updateStudent(UpdateStudent.this,tempStudent);
                 if (result){
                     adapter.notifyDataSetChanged();
                     Toast.makeText(UpdateStudent.this, "Save successfully!",
@@ -70,7 +73,7 @@ public class UpdateStudent extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Student tempStudent = tempData();
-                boolean result = sqliteDAO.deleteStudent(UpdateStudent.this,tempStudent.getmID());
+                boolean result = DemoSqliteDAO.deleteStudent(UpdateStudent.this,tempStudent.getmID());
                 if (result){
                     adapter.notifyDataSetChanged();
                     Toast.makeText(UpdateStudent.this, "Delete successfully!",

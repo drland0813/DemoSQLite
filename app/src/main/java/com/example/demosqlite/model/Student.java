@@ -13,12 +13,6 @@ public class Student {
         this.mClass = mClass;
     }
 
-    public Student(int mID, String mFullName, String mClass) {
-        this.mID = mID;
-        this.mFullName = mFullName;
-        this.mClass = mClass;
-    }
-
     public int getmID() {
         return mID;
     }

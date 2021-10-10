@@ -42,8 +42,7 @@ public class DemoSqliteDAO {
     public List<Student> getListStudents(Context context){
         List<Student> studentList = new ArrayList<>();
         SQLiteDatabase db = DemoSqliteDbHelper.getReadableDatabase(context);
-        String query = "SELECT * FROM " + DemoSqliteDbContract.SinhVienEntry.TABLE_NAME;
-        Cursor cursor  = db.rawQuery(query,null);
+        Cursor cursor  = getAllStudents(context);
         if (cursor.moveToFirst()){
             do {
                 Student student = new Student();

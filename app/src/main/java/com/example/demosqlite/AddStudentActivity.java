@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import static com.example.demosqlite.MainActivity.*;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.demosqlite.data.DemoSqliteDAO;
 import com.example.demosqlite.model.Student;
 
 
@@ -39,7 +41,7 @@ public class AddStudentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Student student = createStudent();
                 if (student != null){
-                    boolean result = sqliteDAO.addStudent(AddStudentActivity.this, student);
+                    boolean result = DemoSqliteDAO.addStudent(AddStudentActivity.this, student);
                     if (result){
                         adapter.notifyDataSetChanged();
                         Toast.makeText(AddStudentActivity.this, "Add to database successfully!",

@@ -20,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private FloatingActionButton btnAdd_Main;
     private ListView listView;
-    public static  DemoSqliteDAO sqliteDAO;
+    public  DemoSqliteDAO sqliteDAO;
     public static  DemoCursorAdapter adapter;
     private List<Student> studentList;
     @Override
