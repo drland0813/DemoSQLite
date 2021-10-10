@@ -14,7 +14,6 @@ public class DemoCursorAdapter extends CursorAdapter {
     public DemoCursorAdapter(Context context, Cursor c) {
         super(context, c, 0);
     }
-
     // The newView method is used to inflate a new view and return it,
     // you don't bind any data to the view at this point.
     @Override
@@ -32,17 +31,14 @@ public class DemoCursorAdapter extends CursorAdapter {
         TextView studentClassIdTv = view.findViewById(R.id.studentClassId);
 
         // Extract properties from cursor
-        String studentId = "ID: " + cursor.getString(cursor.getColumnIndex(DemoSqliteDbContract.SinhVienEntry._ID));
+        String studentId = "" + cursor.getString(cursor.getColumnIndex(DemoSqliteDbContract.SinhVienEntry._ID));
         String studentFullName =
                 cursor.getString(cursor.getColumnIndex(DemoSqliteDbContract.SinhVienEntry.COLUMNS_FULL_NAME));
         String studentClassId =
                 cursor.getString(cursor.getColumnIndex(DemoSqliteDbContract.SinhVienEntry.COLUMNS_CLASS_ID));
-
         // Populate fields with extracted properties
         studentIdTv.setText(studentId);
         studentFullNameTv.setText(studentFullName);
         studentClassIdTv.setText(studentClassId);
-
-
     }
 }

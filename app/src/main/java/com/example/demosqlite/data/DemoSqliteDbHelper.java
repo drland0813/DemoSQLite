@@ -1,7 +1,6 @@
 package com.example.demosqlite.data;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
@@ -28,6 +27,4 @@ public class DemoSqliteDbHelper extends SQLiteAssetHelper {
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         return db;
     }
-
-
 }

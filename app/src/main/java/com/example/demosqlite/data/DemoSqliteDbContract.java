@@ -1,16 +1,8 @@
 package com.example.demosqlite.data;
-
 import android.provider.BaseColumns;
-
-/**
- This class is a contract for all possible table in demoSqlite database
- **/
 public class DemoSqliteDbContract {
 
-
-
     static public class SinhVienEntry implements BaseColumns {
-
         /**
          * Name of database table for SinhVien
          */
@@ -36,8 +28,5 @@ public class DemoSqliteDbContract {
          * Type: TEXT
          */
         public final static String COLUMNS_CLASS_ID = "classId";
-
-
-
     }
 }
